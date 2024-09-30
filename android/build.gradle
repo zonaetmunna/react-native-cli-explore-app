@@ -4,7 +4,8 @@ buildscript {
         minSdkVersion = 23
         compileSdkVersion = 34
         targetSdkVersion = 34
-        ndkVersion = "26.1.10909125"
+        // ndkVersion = "26.1.10909125"
+        ndkVersion = "25.2.9519653"
         kotlinVersion = "1.9.24"
     }
     repositories {
@@ -12,10 +13,18 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        // classpath("com.android.tools.build:gradle")
+        // classpath("com.facebook.react:react-native-gradle-plugin")
+        // classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+         classpath("com.android.tools.build:gradle:8.1.2") // Add the latest stable version of the Gradle build tools
+    classpath("com.facebook.react:react-native-gradle-plugin:0.72.0") // Use a specific version of React Native Gradle plugin
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24") // Ensure this matches your Kotlin version
     }
 }
 
 apply plugin: "com.facebook.react.rootproject"
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','AntDesign.ttf', 'FontAwesome.ttf' ] // Specify all required fonts
+]
+
+
